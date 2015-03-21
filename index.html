@@ -1,0 +1,39 @@
+<!doctype html>
+<html ng-app="onlineshopApp">
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+        <script src="js/app.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    </head>
+    <body ng-controller="FoodController">
+        <header class="hero-unit" id="banner">
+            <div class="container">
+                <h1>Food View!!!</h1>
+            </div>
+        </header>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">Features: {{choose}}</h1>
+                    <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="food in foodList">
+                        <li><a href="#" tooltip="{{food}}" ng-click="changeSelection(food)">Product: {{food.name}} Price: {{food.price}}</a></li>
+                    </ul>
+                <button ng-click="add()">Add item</button>
+                <button ng-click="remove()">Remove item</button>
+            </div>
+            <div ng-repeat="(name, quantity) in cart" class="col-lg-12">
+            <div>{{name}}{{quantity}}</div>
+            </div>
+            <div>Total amount: {{totalPrice}}</div>
+            </div>
+        </div>
+    </body>
+</html>
