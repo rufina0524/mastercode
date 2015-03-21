@@ -16,6 +16,17 @@
                     <a ng-href="#!/{{item.link}}"><span class="glyphicon glyphicon-{{item.icon}}"></span>{{item.title}}</a>
                 </li>
             </ul>
+            <form class="navbar-form navbar-right">
+                <div ng-if="!loggedIn">
+                    <div class="form-group">
+                        <input type="text" ng-model="$parent.username" class="form-control" placeholder="Username">
+                    </div>
+                    <button ng-click="login()" class="btn btn-default">Login</button>
+                </div>
+                <div ng-if="loggedIn">
+                    <button ng-click="logout()" class="btn btn-default">Log out</button>
+                </div>
+            </form>
         </div>
     </div>
 </nav>

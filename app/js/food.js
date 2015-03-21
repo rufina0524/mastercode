@@ -1,5 +1,5 @@
-app.controller('FoodController', ['$scope',
-        function($scope) {
+app.controller('FoodController', ['$scope', 'ApiService',
+        function($scope, $api) {
             $scope.foodList = [{
                 name: 'Sausage',
                 price: 100
@@ -67,5 +67,13 @@ app.controller('FoodController', ['$scope',
             $scope.checkout = function() {
                 alert("Checkout");
             }
+
+            var tryCallDummyApi = function () {
+                $api.examplePost({dummyObject: true})
+                    .then(function (response) {
+                        console.log(response);
+                    });
+            };
+            tryCallDummyApi();
         }
     ]);
