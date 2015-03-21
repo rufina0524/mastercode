@@ -6,6 +6,16 @@ app.config(function($routeProvider, $locationProvider) {
             templateUrl: 'views/food.html',
             controller: 'FoodController'
         })
+        .when('/food', {
+            templateUrl: 'views/food.html',
+            controller: 'FoodController'
+        })
+        .otherwise({
+            redirectTo: function() {
+                console.log('redirect');
+                return '/food';
+            }
+        });
 });
 
 app.service('ApiService', ['$http',
