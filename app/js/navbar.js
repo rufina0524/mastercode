@@ -1,7 +1,7 @@
 'use strict';
 
 app
-    .controller('NavbarController', function ($scope, $location) {
+    .controller('NavbarController', function ($scope, $location, AccountService) {
         $scope.menu = [{
             'title': 'Home',
             'link': '/',
@@ -31,4 +31,20 @@ app
         $scope.isActive = function (route) {
             return '/' + route === $location.path();
         };
+
+        $scope.loggedIn = '';
+        $scope.username = '';
+
+        $scope.login = function () {
+            if ($scope.username) {
+                AccountService.login($scope.username);
+                $scope.loggedIn = $scope.username;
+                $scope.username = '';
+            }
+        };
+
+        $scope.logout = function () {
+            AccountService.logout();
+            $scope.loggedIn = '';
+        }
     });
