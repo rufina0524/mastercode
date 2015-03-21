@@ -1,0 +1,22 @@
+<header class="hero-unit" id="banner">
+    <div class="container">
+        <h1>Food View!!!</h1>
+    </div>
+</header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 class="page-header">Features: {{choose}}</h1>
+            <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="food in foodList">
+                <li><a href="#" tooltip="{{food}}" ng-click="changeSelection(food)">Product: {{food.name}} Price: {{food.price}}</a></li>
+            </ul>
+        <button ng-click="add()">Add item</button>
+        <button ng-click="remove()">Remove item</button>
+    </div>
+    <div ng-repeat="(name, quantity) in cart" class="col-lg-12">
+    <div>{{name}}{{quantity}}</div>
+    </div>
+    <div>Total amount: {{totalPrice}}</div>
+    </div>
+</div>
