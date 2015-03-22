@@ -5,10 +5,10 @@
 <div style=" background-color: #FFF;    margin: 30px;    border-radius: 10px;    box-shadow: -3px -0px 30px 10px #EEE;">
 <h2>Party</h2>
 <table style="padding: 10px; width: 100%;">
-<col width = "25%">
-<col width = "25%">
-<col width = "25%">
-<col width = "25%">
+<col width = "20%">
+<col width = "20%">
+<col width = "20%">
+<col width = "20%">
 <tr style="font-weight: bold;">
 	<td> Payer </td>
 	<td> Merchant </td>
