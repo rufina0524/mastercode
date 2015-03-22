@@ -7,13 +7,14 @@
 <div class="container">
     <div>
         <div class="col-lg-12">
-            <h1 class="page-header">Features: {{choose}}</h1>
+            <h1 class="page-header"></h1>
             <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="food in foodList">
-                <li><a tooltip="{{food}}" ng-click="changeSelection(food)">Product: {{food.name}} Price: {{food.price}}</a></li>
+                <li><a tooltip="{{food}}" ng-click="changeSelection(food)"><img style="width: 85%; max-height: 200px;" ng-src="{{food.img}}" />Product: {{food.name}} Price: {{food.price}}</a></li>
             </ul>
-            <button ng-click="add()" class="btn btn-default">Add item</button>
-            <button ng-click="deduct()" class="btn btn-default">Remove item</button>
         </div>
+		<div class="row margin-0">
+			<button style="margin-top: 10px;" ng-click="add()" class="btn btn-default">Add item</button>
+		</div>
         <div class="row margin-0 list-header">
             <div class="col-lg-6 header">Product</div>
             <div class="col-lg-6 header">Quantity</div>
@@ -22,6 +23,8 @@
         <div ng-repeat="(name, item) in cart" class="col-lg-12" ng-if="item.quantity > 0">
             <div class="col-lg-6 cell">{{name}}</div>
             <div class="col-lg-6 cell">{{item.quantity}} <button ng-click="deduct(name)">-</button></div>
+			<!--div class="col-lg-4 cell"><img src="{{item.img}}" /></div-->
+			
         </div>
     </div>
 
@@ -30,9 +33,12 @@
         <div>
             <h2 class="page-header">Total amount: {{totalPrice}}</h2>
         </div>
-        <div>
+<!--        <div>
             <h1 class="page-header">Party: <input type="text" class="form-control" /></h1>
-        </div>
-        <button ng-click="checkout()" class="btn btn-default">Checkout</button>
+        </div>-->
+		<div class="MasterPassConnectBtnExample"><img ng-click="checkout()"  src=" https://www.masterpass.com/lightbox/Switch/integration/MasterPass.connect.png " alt="Connect with MasterPass" /></div>
+		<p style="margin-top: 20px;">
+		<button onClick='alert("Master Card Express Checkout - Pairing")'>User Express Checkout?</button>
+<!--    </p>    <button ng-click="checkout()" class="btn btn-default">Checkout</button>-->
     </div>
 </div>

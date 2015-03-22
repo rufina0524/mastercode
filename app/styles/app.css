@@ -1,5 +1,5 @@
 body {
-    background-color: #EEFFEE;
+    background-color: #6FE2F9;
 }
 
 .bg-blue {
@@ -13,4 +13,12 @@ body {
 }
 .bg-purple {
     background-color: purple;
+}
+
+.view-body {
+    background-color: #FFF;
+    margin: 30px;
+    border-radius: 10px;
+    box-shadow: -3px -0px 30px 10px #EEE;
+
 }
