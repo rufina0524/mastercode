@@ -38,13 +38,17 @@ app
                 return deferred.promise;
             };
     
-            var baseUrl = 'http://example.com';
+            var baseUrl = 'http://localhost/mastercodeAPI/WalletWebContent/A1.php';
     
             this.examplePost = function(obj) {
                 // When API is ready
-                // return httpPost(urlBase, obj).then(function(response) {
-                //     return response;
-                // });
+                return httpGet(baseUrl, obj).then(function(response) {
+					console.log(response);
+					response.callbackUrl = "http://" + window.location.host + "/mastercodeAPI/" + response.callbackUrl;
+					MasterPass.client.checkout(response);
+					
+//                    return response;
+                });
     
                 // dummy below
                 var deferred = $q.defer();

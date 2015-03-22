@@ -2,16 +2,20 @@ app.controller('FoodController', ['$scope', 'ApiService',
         function($scope, $api) {
             $scope.foodList = [{
                 name: 'Sausage',
-                price: 100
+                price: 100,
+				img: 'images/sausage.jpg'
             }, {
                 name: 'Cheese',
-                price: 400
+                price: 400,
+				img: 'images/cheese.jpg'
             }, {
                 name: 'Coke',
-                price: 200
+                price: 200,
+				img: 'images/coke.jpg'
             }, {
                 name: 'Ham',
-                price: 100
+                price: 100,
+				img: 'images/ham.jpg'
             }];
             $scope.message = 'Hello';
             $scope.choose = '';
@@ -65,7 +69,10 @@ app.controller('FoodController', ['$scope', 'ApiService',
             // }
 
             $scope.checkout = function() {
-                alert("Checkout");
+                //alert("Checkout");
+				$api.examplePost({
+					subTotal: 100000
+				});
             }
 
             var tryCallDummyApi = function () {
@@ -74,6 +81,6 @@ app.controller('FoodController', ['$scope', 'ApiService',
                         console.log(response);
                     });
             };
-            tryCallDummyApi();
+            //tryCallDummyApi();
         }
     ]);
